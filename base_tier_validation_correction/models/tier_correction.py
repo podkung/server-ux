@@ -44,7 +44,7 @@ class TierCorrection(models.Model):
         readonly=True,
         states={"draft": [("readonly", False)]},
     )
-    name_search = fields.Char(
+    search_name = fields.Char(
         string="Name Search",
         readonly=True,
         states={"draft": [("readonly", False)]},
@@ -134,8 +134,8 @@ class TierCorrection(models.Model):
             if rec.correction_type == "reviewer":
                 doc_domain = [("review_ids.status", "=", "pending")]
                 review_domain = [("status", "=", "pending")]
-                if rec.name_search:
-                    doc_ids = self.env[rec.model].name_search(rec.name_search)
+                if rec.search_name:
+                    doc_ids = self.env[rec.model].name_search(rec.search_name)
                     doc_domain += [("id", "in", list(dict(doc_ids).keys()))]
                 if rec.old_reviewer_ids:
                     doc_domain += [
@@ -209,7 +209,7 @@ class TierCorrection(models.Model):
         self.ensure_one()
         action = self.env.ref("base.ir_cron_act")
         result = action.read()[0]
-        cron = self.env.ref("base_tier_validation_correction.tier_correction_sechduler")
+        cron = self.env.ref("base_tier_validation_correction.tier_correction_scheduler")
         result["domain"] = [("id", "in", cron.id)]
         return result
 

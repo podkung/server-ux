@@ -27,9 +27,9 @@ Quick access, from a working document, to create/view Tier Review Correction
 * On the yellow banner (pending state), click on "Change Reviewer" link on its right side.
 
   * If this document has no Correction yet, it will create new.
-  * If the document alreay has some Corrections, it will show those corrections.
+  * If the document already has some Corrections, it will show those corrections.
 
-To run the Tier Review Correction by scheulded job
+To run the Tier Review Correction by scheduled job
 
 * As user with Tier Review Correction role
 * On any Tier Review Correction, open tab "Scheduled Action"

@@ -95,7 +95,7 @@ class TierTierValidation(SavepointCase):
         correction = self.env["tier.correction"].create(
             {
                 "name": res["context"].get("default_name"),
-                "name_search": res["context"].get("default_name_search"),
+                "search_name": res["context"].get("default_search_name"),
                 "model_id": res["context"].get("default_model_id"),
                 "correction_type": res["context"].get("default_correction_type"),
                 "new_reviewer_ids": [self.test_user_2.id],
@@ -164,7 +164,7 @@ class TierTierValidation(SavepointCase):
         correction = self.env["tier.correction"].create(
             {
                 "name": res["context"].get("default_name"),
-                "name_search": res["context"].get("default_name_search"),
+                "search_name": res["context"].get("default_search_name"),
                 "model_id": res["context"].get("default_model_id"),
                 "correction_type": res["context"].get("default_correction_type"),
                 "new_reviewer_ids": [self.test_user_2.id],
@@ -173,7 +173,7 @@ class TierTierValidation(SavepointCase):
         # Run Schedulder, to correct
         correction.date_schedule_correct = fields.Datetime.now()
         scheduler = self.env.ref(
-            "base_tier_validation_correction.tier_correction_sechduler"
+            "base_tier_validation_correction.tier_correction_scheduler"
         )
         correction.action_prepare()
         self.assertEqual(correction.state, "prepare")
@@ -187,7 +187,7 @@ class TierTierValidation(SavepointCase):
             correction.date_schedule_revert = fields.Datetime.now() - timedelta(days=1)
         correction.date_schedule_revert = fields.Datetime.now()
         scheduler = self.env.ref(
-            "base_tier_validation_correction.tier_correction_sechduler"
+            "base_tier_validation_correction.tier_correction_scheduler"
         )
         self.assertEqual(correction.state, "done")
         scheduler.method_direct_trigger()

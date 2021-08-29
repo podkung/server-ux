@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo noupdate="1">
-    <record id="tier_correction_sechduler" model="ir.cron">
+    <record id="tier_correction_scheduler" model="ir.cron">
         <field name="name">Tier Correction Scheduler</field>
         <field name="interval_number">1</field>
         <field name="interval_type">hours</field>

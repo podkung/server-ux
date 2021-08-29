@@ -5,6 +5,6 @@ For example, a document started validation, a tier review is assigned to Mr. Smi
 However, since Mr. Smith has urgent business oversea for a few days,
 all document need to get approved by Mr. John as person in charge.
 
-This module allow user with Tier Review Correction role to change the reviewer to Mr. Jhon.
+This module allow user with Tier Review Correction role to change the reviewer to Mr. John.
 
 Note: Currently, only correction type available is to reassign the reviewer, but it is possible to add in the future.

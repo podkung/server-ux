@@ -3,7 +3,7 @@
 <data noupdate="0">
 
     <record id="group_tier_correction" model="res.groups">
-        <field name="name">Tier Reivew Correction</field>
+        <field name="name">Tier Review Correction</field>
         <field name="category_id" ref="base.module_category_hidden" />
         <field
                 name="users"

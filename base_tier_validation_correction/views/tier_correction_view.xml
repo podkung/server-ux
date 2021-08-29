@@ -102,7 +102,7 @@
                                 widget="many2many_tags"
                                 string="Reviewer(s)"
                             />
-                            <field name="name_search" />
+                            <field name="search_name" />
                         </group>
                         <group name="set_value" string="Reassign to new value">
                             <p class="oe_grey" colspan="2">
